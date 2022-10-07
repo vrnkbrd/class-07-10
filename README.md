@@ -1,6 +1,6 @@
 # class-07-10
-Diff: 6 
-Task: 
+#### Task 1.
+### Task 6kyu: 
 We search non-negative integer numbers, with at most 3 digits, such as the sum of the cubes of their digits is the number itself; we will call them "cubic" numbers.
 
 153 is such a "cubic" number : 1^3 + 5^3 + 3^3 = 153
@@ -24,7 +24,9 @@ Examples:
 - s = "QK29a45[&erui9026315"
   the groups are 29, 45, 902, 631, 5. None is cubic.
   Return: "Unlucky"
-My solution: 
+  
+#### My solution: 
+```Java
 class Cubes {
   
   public static String isSumOfCubes(String s) {
@@ -75,8 +77,10 @@ class Cubes {
     }
   }
 }
+```
 
-Fav solution: 
+### Fav solution: 
+```Java
 import java.util.ArrayList;
 
 class Cubes {
@@ -92,15 +96,18 @@ class Cubes {
     return cubes.isEmpty() ? "Unlucky" : String.join(" ", cubes) + " " + cubes.stream().mapToInt(Integer::parseInt).sum() + " Lucky";
   }
 }
+```
 I loved that the the participant used this data structure and maximized using of functions from library
 
-Task 2 6 kyu
-Task: Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+#### Task 2. 
+### Task 6 kyu: 
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
 
 Examples
 "the-stealth-warrior" gets converted to "theStealthWarrior"
 "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
-My solution: 
+### My solution: 
+```Java
 import java.lang.StringBuilder;
 class Solution{
 
@@ -121,8 +128,11 @@ class Solution{
     return String.valueOf(a);
   }
 }
+```
 
-Fav solution: 
+### Fav solution: 
+
+```Java
 import java.lang.StringBuilder;
 class Solution{
 
@@ -134,4 +144,5 @@ class Solution{
     return s;
   }
 }
-It seems llike it s the shortest solution withouy any additional data structures. Very lovely 
+```
+It seems like it s the shortest solution withouy any additional data structures. Very lovely 
