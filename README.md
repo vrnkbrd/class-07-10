@@ -93,3 +93,45 @@ class Cubes {
   }
 }
 I loved that the the participant used this data structure and maximized using of functions from library
+
+Task 2 6 kyu
+Task: Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+Examples
+"the-stealth-warrior" gets converted to "theStealthWarrior"
+"The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+My solution: 
+import java.lang.StringBuilder;
+class Solution{
+
+  static String toCamelCase(String s){
+     StringBuilder a = new StringBuilder();
+     for(int i = 0; i < s.length(); i++) {
+          if(s.charAt(i) == '-' || s.charAt(i) == '_') {
+             a.append(Character.toUpperCase(s.charAt(i + 1))); 
+             i++;
+             continue;      
+          }else {
+             a.append(s.charAt(i));
+          }
+       
+      
+       
+     }
+    return String.valueOf(a);
+  }
+}
+
+Fav solution: 
+import java.lang.StringBuilder;
+class Solution{
+
+  static String toCamelCase(String s){
+    String[] words = s.split("[_\\-]");
+    s=words[0];
+    for(int i=1; i<words.length; i++)
+      s+=words[i].substring(0,1).toUpperCase()+words[i].substring(1).toLowerCase();
+    return s;
+  }
+}
+It seems llike it s the shortest solution withouy any additional data structures. Very lovely 
